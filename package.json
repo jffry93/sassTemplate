@@ -1,16 +1,16 @@
 {
-  "name": "scss",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "deploy": "gh-pages -d dist"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://jffry93.github.io/sassTemplate",
-  "description": "",
-  "dependencies": {
-    "gh-pages": "^3.1.0"
-  }
+    "name": "scss",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gh-pages -d dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://jffry93.github.io/sassTemplate",
+    "description": "",
+    "dependencies": {
+        "gh-pages": "^3.1.0"
+    }
 }
