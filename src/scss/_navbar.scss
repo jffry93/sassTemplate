@@ -1,0 +1,47 @@
+@import 'config';
+@import 'mobile';
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    position: relative;
+
+    @include tablet {
+        top: 10px;
+    }
+    
+    ul {
+        display:flex;
+        list-style-type: none;
+
+        @include tablet {
+            display: none;
+        }
+
+        li {
+            padding: 15px;
+        }
+    }
+
+    a {
+        color: set-text-color($primary-color);
+    }
+    
+    a:hover {
+        color: $secondary-color;
+    }
+
+    .navbar-hamburger{
+        opacity: 0;
+        
+        @include tablet {
+            color: set-text-color($primary-color);
+            opacity: 1;
+            position: absolute;
+            right: 0px;
+            font-size: 2rem;
+        }
+    }
+}

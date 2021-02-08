@@ -1,0 +1,34 @@
+@import 'config';
+@import 'mobile';
+.bot-container {
+    .bot-content {
+        position: relative;
+        bottom: 50px;
+        height: 100%;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            position: relative;
+            width: 50%;
+            min-width: 300px;
+            top: 0px;
+            @include iphone {
+                top: 30px;
+            }
+        }
+        h1 {
+            color: $primary-color;
+        }
+        p {
+            color: $primary-color;
+        }
+    }
+    @include tablet {
+        .bot-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

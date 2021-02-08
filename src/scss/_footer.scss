@@ -1,0 +1,181 @@
+@import 'config';
+@import 'mobile';
+footer {
+    background-color: $primary-color;
+    .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+        h1 {
+            color: set-text-color($primary-color);
+            font-size: 2rem;
+        }
+        h1.end {
+            position: relative;
+            bottom: 150px;
+            font-size: 1.5rem;
+            color: $light-color;
+            opacity: 0;
+            transition: 0.8s ease-in-out;
+        }
+    }
+    #sm-icons {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding: 30px;
+        font-size: 30px;
+        color: $light-color;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+    }
+}
+
+//lines 19 to 30 dont have a class atm. JS will create .close
+#newsletter-box.close {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: 0.8s ease-in-out;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0);
+}
+
+#newsletter-box {
+    background: $light-color;
+    position: relative;
+    width: 600px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0 16px 24px 2px rgba($color: #000000, $alpha: 0.1), 0 6px 10px 5px rgba($color: #000000, $alpha: 0.1), 0 8px 10px -5px rgba($color: #000000, $alpha: 0.2);
+    transition: transform 0.1s ease-in-out;
+    // &:hover {
+    //     transform: translate(0px, 10px);
+    // }
+}
+
+#next-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 30px;
+    color: $primary-color;
+    float: right;
+    cursor: pointer;
+    z-index: 2;
+    &:hover {
+        color: lighten($primary-color, 15%);
+    }
+}
+
+#prev-btn {
+    position: absolute;
+    font-size: 15px;
+    left: 30px;
+    top: 12px;
+    z-index: 2;
+    color: $secondary-color;
+    float: right;
+    cursor: pointer;
+    &:hover {
+        color: lighten($secondary-color, 15%);
+    }
+}
+
+//JS will adjust opacity
+#input-group {
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    margin: 10px 60px 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    input {
+        position: relative;
+        width: 100%;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        outline: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+    #input-field {
+        position: relative;
+        top: 5px;
+    }
+    #input-label {
+        position: absolute;
+        pointer-events: none;
+        top: 32px;
+        left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: 0.2s ease-in-out;
+    }
+    input:valid+#input-label {
+        top: 6px;
+        left: 42px;
+        margin-left: 0 !important;
+        font-size: 11px;
+        font-weight: normal;
+        color: $secondary-color;
+    }
+}
+
+//JS will adjust width
+#input-progress {
+    position: relative;
+    top: 5px;
+    border-bottom: 3px solid $primary-color;
+    width: 0;
+    transition: width 0.6s ease-in-out;
+}
+
+//JS will change the width according to progress
+#progress-bar {
+    position: absolute;
+    background: $secondary-color;
+    height: $progress-height;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.error {
+    #input-progress {
+        border-color: $error;
+    }
+    #next-btn {
+        color: $error;
+    }
+}
+
+.close {
+    #next-btn,
+    #prev-btn {
+        color: $light-color;
+    }
+}
+
+@include tablet {
+    footer {
+        .container {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+    #newsletter-box {
+        width: 80%;
+        #input-label {
+            font-size: 0.7rem;
+        }
+        input:valid+#input-label {
+            font-size: 8px;
+        }
+    }
+}

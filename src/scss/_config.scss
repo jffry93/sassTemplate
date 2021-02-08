@@ -1,0 +1,26 @@
+//This file has all the variable and functions 
+$light-color:#f4f4f4;
+$font-stack: 'Roboto',
+Helvetica,
+sans-serif;
+$primary-color: #176a6d;
+$secondary-color: #bd6500;
+$error: red;
+$progress-height: 10px;
+//Set text color based on background
+//Example - if text is light the background will be dark.
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        @return #333;
+    }
+    @else {
+        @return #fff
+    }
+}
+
+;
+//Set background & text color
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color)
+}
